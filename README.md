@@ -1,291 +1,108 @@
-# Rock, Paper, Scissors Game
+Rock, Paper, Scissors Game
+Project Description
 
-## Project Description
+This project is a simple Rock, Paper, Scissors game developed in both C programming and Java. The game allows a user to play against the computer by selecting one of three options:
 
-This project is a simple **Rock, Paper, Scissors game developed using C programming language**. The game allows a user to play against the computer through the terminal.
+1 – Rock
+2 – Paper
+3 – Scissors
 
-The player is given three choices:
+The computer randomly selects one option, and the program compares both choices to determine the winner of each round.
 
-* **1 - Rock**
-* **2 - Paper**
-* **3 - Scissors**
+If the user enters an invalid option, the program displays an error message and ends the game. After each valid round, the user can choose to play another round or end the game.
 
-The computer randomly selects one of the three choices. The program then compares the user's choice with the computer's choice and determines the winner of the round.
+C Programming Version
 
----
+The C version demonstrates basic C programming concepts such as:
 
-## Project Objectives
+Variables and data types
+if, else if, and else
+do-while/looping
+User input using scanf()
+Output using printf()
+Random number generation using rand()
+Score calculation and comparison
 
-The main objectives of this project are:
+The computer generates a random choice between 1 and 3, then the program compares it with the user's choice.
 
-* To practice programming using the **C programming language**.
-* To demonstrate the use of **conditional statements**.
-* To demonstrate the use of **loops**.
-* To use **functions and variables**.
-* To generate random numbers using C.
-* To implement a simple game logic.
-* To practice user input and output.
-* To keep track of the player's and computer's scores.
+File: rock-paper-scissors.c
 
----
+Java Version
 
-## How the Game Works
+The Java version implements the same game using Java programming concepts.
 
-When the program starts, it displays the following options:
+It demonstrates:
 
-```text
-1. Rock
-2. Paper
-3. Scissors
-```
+Variables and data types
+if-else statements
+while loops
+User input using Scanner
+Random selection using the Random class
+Methods
+Score tracking
+Input validation
 
-The user enters a number between **1 and 3**.
+The Java program uses a displayChoice() method to display Rock, Paper, or Scissors based on the selected number.
 
-### Valid Input
+File: RockPaperScissors.java
 
-If the user enters:
-
-```text
-1
-2
-3
-```
-
-the program continues to the next step.
-
-The computer then randomly selects Rock, Paper, or Scissors.
-
-### Invalid Input
-
-If the user enters a number outside the range of 1–3, for example:
-
-```text
-4
-5
-0
--1
-```
-
-the program displays an error message and ends the game.
-
----
-
-## Game Rules
-
-The winner is determined using the following rules:
-
-| User Choice | Computer Choice | Result        |
-| ----------- | --------------- | ------------- |
-| Rock        | Scissors        | User Wins     |
-| Paper       | Rock            | User Wins     |
-| Scissors    | Paper           | User Wins     |
-| Rock        | Paper           | Computer Wins |
-| Paper       | Scissors        | Computer Wins |
-| Scissors    | Rock            | Computer Wins |
-| Rock        | Rock            | Draw          |
-| Paper       | Paper           | Draw          |
-| Scissors    | Scissors        | Draw          |
-
----
-
-## Main Features
-
-### 1. User Input
-
-The program allows the user to select Rock, Paper, or Scissors by entering 1, 2, or 3.
-
-### 2. Computer Random Selection
-
-The computer uses C's random number generation functions to randomly select an option.
-
-```c
-computerChoice = rand() % 3 + 1;
-```
-
-### 3. Input Validation
-
-The program checks whether the user's choice is valid.
-
-```c
-if (userChoice < 1 || userChoice > 3) {
-    printf("ERROR: Invalid choice!\n");
-    printf("Game ended.\n");
-}
-```
-
-### 4. Winner Determination
-
-The program compares the user's choice with the computer's choice and displays the winner.
-
-### 5. Score Tracking
-
-The program keeps track of:
-
-* User score
-* Computer score
-* Draws
-
-### 6. Multiple Rounds
-
-After every round, the user is asked:
-
-```text
-Do you want to play another round? (Y/N):
-```
-
-If the user enters **Y**, another round starts.
-
-If the user enters **N**, the game ends and the final score is displayed.
-
----
-
-## Technologies Used
-
-* **Programming Language:** C
-* **Compiler:** GCC
-* **Development Environment:** Visual Studio Code
-* **Version Control:** Git and GitHub
-* **Flowchart:** draw.io
-
----
-
-## Project Structure
-
-```text
-rock-paper-scissors/
+Game Rules
+User	Computer	Result
+Rock	Scissors	User Wins
+Paper	Rock	User Wins
+Scissors	Paper	User Wins
+Rock	Paper	Computer Wins
+Paper	Scissors	Computer Wins
+Scissors	Rock	Computer Wins
+Same Choice	Same Choice	Draw
+Main Features
+User vs. Computer gameplay
+Three choices: Rock, Paper, and Scissors
+Random computer selection
+Invalid input detection
+Winner displayed after every round
+Score tracking
+Multiple rounds
+Option to play again or end the game
+Final score and overall winner
+Project Structure
+Rock-Paper-Scissors/
 │
-├── rock-paper-scissors.c
-├── README.md
-└── rock_paper_scissors_flowchart.drawio
-```
+├── C-Version/
+│   └── rock-paper-scissors.c
+│
+├── Java-Version/
+│   └── RockPaperScissors.java
+│
+├── rock_paper_scissors_flowchart.drawio
+│
+└── README.md
+How to Run
+C Version
 
-### Files Explanation
+Compile:
 
-**`rock-paper-scissors.c`**
-
-Contains the complete C source code for the game.
-
-**`README.md`**
-
-Contains the project documentation and explanation.
-
-**`rock_paper_scissors_flowchart.drawio`**
-
-Contains the system flowchart created using draw.io.
-
----
-
-## Example Output
-
-```text
-====================================
-       ROCK PAPER SCISSORS
-====================================
-
-Choose one of the following:
-1. Rock
-2. Paper
-3. Scissors
-
-Enter your choice: 1
-
-You chose: Rock
-Computer chose: Scissors
-
-RESULT: YOU WIN THIS ROUND!
-
------------------------------
-Your Score     : 1
-Computer Score : 0
------------------------------
-
-Do you want to play another round? (Y/N): Y
-
-TRY AGAIN!
-```
-
----
-
-## How to Run the Project
-
-### Step 1: Clone the Repository
-
-Open your terminal and run:
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-Then enter the project folder:
-
-```bash
-cd rock-paper-scissors
-```
-
-### Step 2: Compile the Program
-
-If you have GCC installed, run:
-
-```bash
 gcc rock-paper-scissors.c -o rock-paper-scissors
-```
 
-### Step 3: Run the Program
+Run:
 
-On Windows:
+rock-paper-scissors
+Java Version
 
-```bash
-rock-paper-scissors.exe
-```
+Compile:
 
-On Linux/macOS:
+javac RockPaperScissors.java
 
-```bash
-./rock-paper-scissors
-```
+Run:
 
----
+java RockPaperScissors
+Objective
 
-## Concepts Demonstrated
+The main objective of this project is to demonstrate how the same problem can be solved using two different programming languages while practicing important programming concepts such as input handling, decision making, loops, random numbers, methods, and score management.
 
-This project demonstrates several fundamental C programming concepts:
+Author
 
-* Variables
-* Data types
-* `if`, `else if`, and `else`
-* `do...while` loops
-* Functions
-* User input using `scanf()`
-* Output using `printf()`
-* Random number generation
-* Comparison operators
-* Logical operators
-* Increment operators
-* Basic program structure
+Elvis Winyasi
 
----
-
-## Future Improvements
-
-The project can be improved by adding:
-
-* A two-player mode.
-* A graphical user interface.
-* Different difficulty levels.
-* Best-of-3 or Best-of-5 game modes.
-* Player names.
-* Game history.
-* More detailed statistics.
-* Sound effects and animations.
-
----
-
-## Author
-
-**Elvis Winyasi**
-
-### Project
-
-**Rock, Paper, Scissors Game Using C Programming**
-
-This project was developed as a practical exercise to demonstrate basic C programming concepts and problem-solving skills.
+Project: Rock, Paper, Scissors Game
+Languages: C Programming and Java
